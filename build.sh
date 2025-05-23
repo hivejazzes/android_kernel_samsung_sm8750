@@ -23,11 +23,9 @@ export LD_LIBRARY_PATH="$TOOLCHAIN/kernel-build-tools/linux-x86/lib64"
 export HOSTCFLAGS="$sysroot_flags $cflags"
 export HOSTLDFLAGS="$sysroot_flags $ldflags"
 
-TARGET_DEFCONFIG=${1:-sun_gki_defconfig}
+TARGET_DEFCONFIG=${1:-gki_defconfig}
 
 cd "$(dirname "$0")"
-
-echo "-android15-Kokuban-Herta-AYC2-LKM-g$(git rev-parse --short HEAD)" > ./localversion
 
 ARGS="
 CC=clang
